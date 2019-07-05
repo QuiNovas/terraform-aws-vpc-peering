@@ -1,9 +1,5 @@
 variable "accepter_options" {
-  default     = {
-    allow_remote_vpc_dns_resolution  = false
-    allow_classic_link_to_remote_vpc = false
-    allow_vpc_to_remote_classic_link = false
-  }
+  default     = {}
   description = "An optional configuration block that allows for VPC Peering Connection options to be set for the VPC that accepts the peering connection (a maximum of one)."
   type = map(string)
 }
@@ -32,11 +28,7 @@ variable "accepter_vpc_id" {
 }
 
 variable "requester_options" {
-  default     = {
-    allow_remote_vpc_dns_resolution  = false
-    allow_classic_link_to_remote_vpc = false
-    allow_vpc_to_remote_classic_link = false
-  }
+  default     = {}
   description = "A optional configuration block that allows for VPC Peering Connection options to be set for the VPC that requests the peering connection (a maximum of one)."
   type = map(string)
 }
