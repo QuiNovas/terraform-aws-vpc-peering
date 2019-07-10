@@ -10,12 +10,6 @@ variable "accepter_route_table_ids" {
   type        = list(string)
 }
 
-variable "accepter_route_table_ids_count" {
-  default     = 0
-  description = "The number of route table ids in accepter_route_table_ids."
-  type        = number
-}
-
 variable "accepter_tags" {
   default     = {}
   description = "Tags to add to the accepter side resources of the connection."
@@ -37,12 +31,6 @@ variable "requester_route_table_ids" {
   default     = []
   description = "A list of route table ids within the requester VPC to attach the peering route to. If not present all route tables in the VPC will be updated."
   type        = list(string)
-}
-
-variable "requester_route_table_ids_count" {
-  default     = 0
-  description = "The number of route table ids in requester_route_table_ids."
-  type        = number
 }
 
 variable "requester_tags" {
