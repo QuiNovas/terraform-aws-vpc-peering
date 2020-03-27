@@ -50,3 +50,13 @@ variable "route_ipv6" {
   type        = string
 }
 
+variable "requester_region" {
+  description = "Requester VPC region"
+  type = string
+}
+
+variable "accepter_region" {
+  description = "Accepter VPC region"
+  type = string
+}
+
