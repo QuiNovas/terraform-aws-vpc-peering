@@ -27,7 +27,7 @@ module "peering" {
 
   requester_vpc_id = "vpc-abcdefgh123"
   source           = "QuiNovas/vpc-peering/aws"
-  version          = "3.0.1"
+  version          = "3.0.2"
 }
 ```
 
