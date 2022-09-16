@@ -1,14 +1,7 @@
-terraform {
-  required_version = ">= 0.13"
+provider "aws" {
+  alias = "accepter"
+}
 
-  required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-
-      configuration_aliases = [
-        aws.accepter,
-        aws.requester,
-      ]
-    }
-  }
+provider "aws" {
+  alias = "requester"
 }
