@@ -17,10 +17,10 @@ resource "aws_vpc_peering_connection_accepter" "accepter" {
 
 resource "aws_vpc_peering_connection_options" "accepter" {
   accepter {
-      allow_classic_link_to_remote_vpc = lookup(var.accepter_options, "allow_classic_link_to_remote_vpc", false)
-      allow_remote_vpc_dns_resolution  = lookup(var.accepter_options, "allow_remote_vpc_dns_resolution", false)
-      allow_vpc_to_remote_classic_link = lookup(var.accepter_options, "allow_vpc_to_remote_classic_link", false)
-    }
+    allow_classic_link_to_remote_vpc = lookup(var.accepter_options, "allow_classic_link_to_remote_vpc", false)
+    allow_remote_vpc_dns_resolution  = lookup(var.accepter_options, "allow_remote_vpc_dns_resolution", false)
+    allow_vpc_to_remote_classic_link = lookup(var.accepter_options, "allow_vpc_to_remote_classic_link", false)
+  }
   count                     = length(keys(var.accepter_options)) > 0 ? 1 : 0
   provider                  = aws.accepter
   vpc_peering_connection_id = aws_vpc_peering_connection.connection.id
@@ -28,10 +28,10 @@ resource "aws_vpc_peering_connection_options" "accepter" {
 
 resource "aws_vpc_peering_connection_options" "requester" {
   accepter {
-      allow_classic_link_to_remote_vpc = lookup(var.requester_options, "allow_classic_link_to_remote_vpc", false)
-      allow_remote_vpc_dns_resolution  = lookup(var.requester_options, "allow_remote_vpc_dns_resolution", false)
-      allow_vpc_to_remote_classic_link = lookup(var.requester_options, "allow_vpc_to_remote_classic_link", false)
-    }
+    allow_classic_link_to_remote_vpc = lookup(var.requester_options, "allow_classic_link_to_remote_vpc", false)
+    allow_remote_vpc_dns_resolution  = lookup(var.requester_options, "allow_remote_vpc_dns_resolution", false)
+    allow_vpc_to_remote_classic_link = lookup(var.requester_options, "allow_vpc_to_remote_classic_link", false)
+  }
   count                     = length(keys(var.requester_options)) > 0 ? 1 : 0
   provider                  = aws.requester
   vpc_peering_connection_id = aws_vpc_peering_connection.connection.id

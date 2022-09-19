@@ -1,7 +1,7 @@
 variable "accepter_options" {
   default     = {}
   description = "An optional configuration block that allows for VPC Peering Connection options to be set for the VPC that accepts the peering connection (a maximum of one)."
-  type = map(string)
+  type        = map(string)
 }
 
 variable "accepter_route_table_ids" {
@@ -24,7 +24,7 @@ variable "accepter_vpc_id" {
 variable "requester_options" {
   default     = {}
   description = "A optional configuration block that allows for VPC Peering Connection options to be set for the VPC that requests the peering connection (a maximum of one)."
-  type = map(string)
+  type        = map(string)
 }
 
 variable "requester_route_table_ids" {
